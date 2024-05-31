@@ -47,7 +47,7 @@ module "blog_autoscaling" {
   instance_type       = var.instance_type
   image_id            = data.aws_ami.app_ami.id
 
-  wait_for_capacity_timeout = "300"
+  wait_for_capacity_timeout = "5m"
 }
 
 module "blog_alb" {
