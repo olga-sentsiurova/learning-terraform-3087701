@@ -46,6 +46,8 @@ module "blog_autoscaling" {
   security_groups     = [module.blog_sq.security_group_id]
   instance_type       = var.instance_type
   image_id            = data.aws_ami.app_ami.id
+
+  wait_for_capacity_timeout = "300"
 }
 
 module "blog_alb" {
